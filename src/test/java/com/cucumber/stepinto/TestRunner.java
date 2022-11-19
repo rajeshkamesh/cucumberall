@@ -9,6 +9,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(features = "src//test//resources//Features",
 					glue = "com.cucumber.stepinto",
 					plugin = "html:target",
+					strict = true,
 					monochrome = true, //remove uwanted things  in console
 					dryRun = false,
 					tags = {"@tv"}) //~ignore , "1d" 0r "test"= operator 

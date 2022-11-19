@@ -12,12 +12,14 @@ import cucumber.api.java.Before;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Hooks extends CommonAction{
-	CommonAction c=new CommonAction();
+	CommonAction c = new CommonAction();
 	
 	@Before
 	public void beforeScenario() {
-		c.launch("https://www.amazon.in/");
 		
+		c.launch("https://www.amazon.in/");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().window().maximize();
 	
 	}
 	@After

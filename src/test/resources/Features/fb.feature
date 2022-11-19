@@ -12,8 +12,8 @@ Feature: Facebook signup
     And user input date of birth and gender
     Then complete sigup 
     
+    @tv
     Scenario: facebook
-    
     And enter signup page
     When user input name  using oneD list
     |Rajesh|kumar|

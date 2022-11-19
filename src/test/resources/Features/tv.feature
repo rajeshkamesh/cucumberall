@@ -4,7 +4,7 @@
 Feature: Tv
 Background:
  		Given user login to flipkart
- 		@tv
+ 		
  	 Scenario: Tv
     When user search tv
     And user choose the tv

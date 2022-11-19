@@ -28,8 +28,8 @@ Feature: Mobile
     And user doing payment by using UPI
     Then user receiving confirmation message
     
+   @tv 
    Scenario Outline: Mobilemap
-    
     When user search mobile "<phone>"
     And user choose the mobile
     And user doing payment by using UPI

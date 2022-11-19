@@ -34,7 +34,7 @@ public class Mobilesteps extends CommonAction{
 //		driver= new ChromeDriver();
 //		driver.get("https://www.amazon.in/");
 //		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		c.launch("https://www.amazon.in/");
+	//	c.launch("https://www.amazon.in/");
 	
 //		driver.manage().window().maximize();
 		//driver.findElement(By.xpath("//button[@class='_2KpZ6l _2doB4z']")).click();
@@ -42,8 +42,8 @@ public class Mobilesteps extends CommonAction{
 	@When("user search mobile {string}")
 	public void user_search_mobile(String string) {
 		names = string;
-		WebElement textbox2 = driver.findElement(By.xpath("//input[@type='text']"));
-		//WebElement textbox2 = m.getInputtext();
+		//WebElement textbox2 = driver.findElement(By.xpath("//input[@type='text']"));
+		WebElement textbox2 = m.getInputtext();
 		c.insertTextJs(textbox2, string);
 		//driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
 		WebElement mobile1 = driver.findElement(By.xpath("(//span[contains(text(),'"+names+"')])[8]"));
@@ -58,8 +58,8 @@ String names;
 	public void user_search_mobile() {
 		names = "realme";
 		
-		WebElement textbox = driver.findElement(By.xpath("//input[@type='text']"));
-		//WebElement textbox = m.getInputtext();
+		//WebElement textbox = driver.findElement(By.xpath("//input[@type='text']"));
+		WebElement textbox = m.getInputtext();
 		c.insertTextJs(textbox, names);
 		WebElement mobile1 = driver.findElement(By.xpath("(//span[contains(text(),'"+names+"')])[8]"));
 		mobile1.getText();

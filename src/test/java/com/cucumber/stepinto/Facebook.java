@@ -9,6 +9,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
+import com.flipkart.resources.CommonAction;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -16,21 +18,23 @@ import io.cucumber.datatable.DataTable;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Facebook {
-	
+	CommonAction c= new CommonAction();
 	static WebDriver driver;
 	@Given("open page")
 	public void open_page() {
-		WebDriverManager.chromedriver().setup();
-		driver= new ChromeDriver();
-		driver.get("https://www.facebook.com/");
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-	
-		driver.manage().window().maximize();
+		c.launch("https://www.facebook.com/");
+		
+//		WebDriverManager.chromedriver().setup();
+//		driver= new ChromeDriver();
+//		driver.get("https://www.facebook.com/");
+//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+//	
+		
 	}
 
 	@Given("enter signup page")
 	public void enter_signup_page() {
-		driver.findElement(By.xpath("(//a[@role='button'])[2]")).click();
+		driver.findElement(By.className("_42ft _4jy0 _6lti _4jy6 _4jy2 selected _51sy")).click();
 	}
 
 	@When("user input name")
